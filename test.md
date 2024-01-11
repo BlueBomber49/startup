@@ -1,1 +1,1 @@
-Unable to initialize device PRN
+Hey everybody, this is the beginnings of a great startup.  We've got the skills to pay the bills.  I want to see everyone working hard and hardly working, and keeping a straight face and a clean and tidy workspace.  Let's get to it!
