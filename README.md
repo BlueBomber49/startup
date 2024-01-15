@@ -26,8 +26,9 @@ This is how I will use each of the required technologies:
 ### Sketches
 
 This is a sketch of the sequence diagram describing how the clients will interact with the server and vice versa
-![image1 (3)](https://github.com/BlueBomber49/startup/assets/122587787/f8e946f3-1fb4-490f-8203-9c6bac8f9fc2)
+
+![seq-diagram](https://github.com/BlueBomber49/startup/assets/122587787/0bdc4c5c-b778-4b4e-8b63-2df9fbe927b5)
 
 And these are rough sketches of how the website should look
 
-![image0 (35)](https://github.com/BlueBomber49/startup/assets/122587787/e57b53bd-5950-4cb4-a4e9-f212245befba)
+![Sketches](https://github.com/BlueBomber49/startup/assets/122587787/fdccffe4-101d-4ec6-bf7b-bb4f34e12aab)
