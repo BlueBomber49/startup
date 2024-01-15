@@ -22,3 +22,12 @@ This is how I will use each of the required technologies:
 - Database/Login.  Stores users and their pizzas in a database, as well as login information securely stored in a database.  Registers and logins users
 - WebSocket.  Notifies users when other users login or create a new pizza
 - React.  Will be ported to use the React web framework
+
+### Sketches
+
+This is a sketch of the sequence diagram describing how the clients will interact with the server and vice versa
+![image1 (3)](https://github.com/BlueBomber49/startup/assets/122587787/f8e946f3-1fb4-490f-8203-9c6bac8f9fc2)
+
+And these are rough sketches of how the website should look
+
+![image0 (35)](https://github.com/BlueBomber49/startup/assets/122587787/e57b53bd-5950-4cb4-a4e9-f212245befba)
