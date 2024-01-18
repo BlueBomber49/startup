@@ -11,3 +11,7 @@
 - However, I do have to pay for it if I were to close my server, so it doesn't necessarily save me money.  It just keeps the IP address consistent.
 - Website IP address: 23.22.125.36
 - Command to ssh into the server:  ssh -i [key pair file] ubuntu@23.22.125.36
+
+### Domain name
+- http:tonyspizzagalleria.click
+- 
