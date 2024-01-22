@@ -12,6 +12,8 @@
 - Website IP address: 18.233.95.216
 - Command to ssh into the server:  ssh -i [key pair file] ubuntu@18.233.95.216
 
-### Domain name
+### Domain name/Caddy
 - http:tonyspizzagalleria.click
-- 
+- Subdomains should also be accepted (startup.tonyspizzagalleria.click and/or simon.tonyspizzagalleria.click) but aren't working yet
+- Caddy is the service that authenticates and makes things secure
+
