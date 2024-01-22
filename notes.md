@@ -14,6 +14,6 @@
 
 ### Domain name/Caddy
 - http:tonyspizzagalleria.click
-- Subdomains should also be accepted (startup.tonyspizzagalleria.click and/or simon.tonyspizzagalleria.click) but aren't working yet
+- Subdomains are also accepted (startup.tonyspizzagalleria.click and/or simon.tonyspizzagalleria.click)
 - Caddy is the service that authenticates and makes things secure
 
