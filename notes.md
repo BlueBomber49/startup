@@ -9,8 +9,8 @@
 ### EC2
 - This website uses an elastic IP address, which means that the IP address itself will stay constant and won't reset whenever I close my server.
 - However, I do have to pay for it if I were to close my server, so it doesn't necessarily save me money.  It just keeps the IP address consistent.
-- Website IP address: 23.22.125.36
-- Command to ssh into the server:  ssh -i [key pair file] ubuntu@23.22.125.36
+- Website IP address: 18.233.95.216
+- Command to ssh into the server:  ssh -i [key pair file] ubuntu@18.233.95.216
 
 ### Domain name
 - http:tonyspizzagalleria.click
