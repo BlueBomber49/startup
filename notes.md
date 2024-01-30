@@ -17,3 +17,7 @@
 - Subdomains are also accepted (startup.tonyspizzagalleria.click and/or simon.tonyspizzagalleria.click)
 - Caddy is the service that authenticates and makes things secure
 
+### HTML
+- Basic browser structuring
+- There's a lot you can do within HTML that other things just do better (Inputs, drawings, etc)
+- Allows for navigation between pages which is important
