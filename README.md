@@ -34,10 +34,10 @@ And these are rough sketches of how the website should look
 ![Sketches](https://github.com/BlueBomber49/startup/assets/122587787/fdccffe4-101d-4ec6-bf7b-bb4f34e12aab)
 
 ### HTML deliverable
-HTML pages - 3 HTML pages, one for login, one to create pizzas, and one to view them
-Links - Links at the top of each page for navigation between the different pages
-Text - (Need to complete) Text with instructions on how to create a pizza
-Images - (Need to complete) Images displaying delicious pizza on home page/create page
-DB/Login - (Need to complete) Placeholder for login service in place
-WebSocket - (Need to complete) Placeholder for viewing other pizzas/notifications when a pizza is made
-Need 3rd party server calls
+- HTML pages - 3 HTML pages, one for login, one to create pizzas, and one to view them
+- Links - Links at the top of each page for navigation between the different pages
+- Text - (Need to complete) Text with instructions on how to create a pizza
+- Images - (Need to complete) Images displaying delicious pizza on home page/create page
+- DB/Login - (Need to complete) Placeholder for login service in place
+- WebSocket - (Need to complete) Placeholder for viewing other pizzas/notifications when a pizza is made
+- Need 3rd party server calls
