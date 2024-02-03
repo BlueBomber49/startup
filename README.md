@@ -36,8 +36,8 @@ And these are rough sketches of how the website should look
 ### HTML deliverable
 - HTML pages - 3 HTML pages, one for login, one to create pizzas, and one to view them
 - Links - Links at the top of each page for navigation between the different pages
-- Text - (Need to complete) Text with instructions on how to create a pizza
-- Images - (Need to complete) Images displaying delicious pizza on home page/create page
-- DB/Login - (Need to complete) Placeholder for login service in place
-- WebSocket - (Need to complete) Placeholder for viewing other pizzas/notifications when a pizza is made
-- Need 3rd party server calls
+- Text -  Text with instructions on how to create a pizza
+- Images -  Image displaying delicious pizza on home page
+- DB/Login -  Placeholder for login service in place
+- WebSocket -  Placeholder for viewing other pizzas/notifications when a pizza is made
+- 3rd party server calls - Fact of the day displayed at the bottom of the page
