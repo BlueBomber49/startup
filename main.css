@@ -6,6 +6,7 @@ header{
     background-color: blueviolet;
     justify-content: center;
     align-items: center;
+    border-radius:25px;
 }
 
 menu {
@@ -17,10 +18,12 @@ menu {
     font-size: large;
     background-color: lavender;
     padding-left:0;
+
 }
 
 menu a{
     padding: 1em;
+    border-radius:25px;
 }
 
 h1{
