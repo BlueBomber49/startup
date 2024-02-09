@@ -1,5 +1,8 @@
-body *{
-    background-color: rgb(119, 100, 100);
+body{
+    background-color: green;
+    background-size: cover;
+    height:100vh;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 header{
@@ -10,6 +13,7 @@ header{
     justify-content: center;
     align-items: center;
     border-radius:25px;
+    padding-top: .5em;
 }
 
 header *{
