@@ -1,7 +1,6 @@
 body{
     background-color: rgb(163, 171, 173);
     background-size: cover;
-    height:100vh;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
@@ -49,4 +48,7 @@ footer{
     text-align:center;
     align-items: center;
     justify-content: center;
+    background-color: gray;
+    border-radius: 25px;
+    border:10px solid rgba(100, 100, 100, 0.5)
 }
