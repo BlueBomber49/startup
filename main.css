@@ -53,6 +53,11 @@ footer{
     border:10px solid rgba(100, 100, 100, 0.5)
 }
 
+footer a{
+    color:blanchedalmond;
+    font-style: italic;
+}
+
 main{
     display: flex;
     flex-direction: column;
