@@ -3,6 +3,10 @@ input{
     border-radius: 10px;
 }
 
+main{
+    flex-direction: row;
+}
+
 main div{
     flex-direction: column;
     flex:1;
