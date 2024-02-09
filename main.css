@@ -1,12 +1,19 @@
+body *{
+    background-color: rgb(119, 100, 100);
+}
 
 header{
     display: flex;
     flex-direction: column;
     flex: 0 80px;
-    background-color: blueviolet;
+    background-color: gray;
     justify-content: center;
     align-items: center;
     border-radius:25px;
+}
+
+header *{
+    background-color: gray;
 }
 
 menu {
@@ -16,7 +23,6 @@ menu {
     justify-content: center;
     align-items: center;
     font-size: large;
-    background-color: lavender;
     padding-left:0;
 
 }
@@ -32,4 +38,10 @@ h1{
     flex-direction: row;
     text-align: center;
     align-items: center;
+}
+
+footer{
+    text-align:center;
+    align-items: center;
+    justify-content: center;
 }
