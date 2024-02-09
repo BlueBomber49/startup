@@ -1,5 +1,5 @@
 body{
-    background-color: green;
+    background-color: rgb(163, 171, 173);
     background-size: cover;
     height:100vh;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
@@ -14,6 +14,7 @@ header{
     align-items: center;
     border-radius:25px;
     padding-top: .5em;
+    border:10px solid rgba(100, 100, 100, 0.5);
 }
 
 header *{
