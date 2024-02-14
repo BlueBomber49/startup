@@ -1,0 +1,13 @@
+main .container {
+    height:100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 1em;
+  }
+
+main .card {
+    background-color: red;
+    border: #333 solid thick;
+    border-radius: 1em;
+}
