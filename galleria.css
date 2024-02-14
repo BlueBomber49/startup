@@ -2,12 +2,13 @@ main .container {
     height:100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: 300px;
-    grid-gap: 1em;
+    grid-auto-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 4em;
   }
 
 main .card {
-    background-color: red;
+    background-color: white;
     border: #333 solid thick;
     border-radius: 1em;
+    text-align: center;
 }
