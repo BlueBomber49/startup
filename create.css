@@ -1,7 +1,32 @@
 div{
     padding: 1em;
+    text-align: center;
+}
+
+div.left_column{
+    flex:1;
+}
+
+div.center_column{
+    flex: 5;
+}
+
+div.right_column{
+    flex: 1;
 }
 
 main{
     flex-direction: row;
+}
+
+.Ingredient_card{
+    background-color: burlywood;
+    border: thick black solid;
+    border-radius: 25px;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+svg{
+    background-color: antiquewhite;
 }
