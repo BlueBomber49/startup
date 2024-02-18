@@ -41,3 +41,11 @@ And these are rough sketches of how the website should look
 - DB/Login -  Placeholder for login service in place
 - WebSocket -  Placeholder for viewing other pizzas/notifications when a pizza is made
 - 3rd party server calls - Fact of the day displayed at the bottom of the page
+
+### CSS deliverable
+- Header, footer, and main content body styled
+- Navigation elements - I used some bootstrap buttons!
+- Responsive to window resizing - My app looks good on standard window sizes, but struggles with extremes
+- Application elements - Used good contrast and whitespace, things aren't too crowded
+- Application text content - Consistent fonts
+- Application images - Using placeholder images for finished pizzas
