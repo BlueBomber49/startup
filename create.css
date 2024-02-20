@@ -19,6 +19,10 @@ main{
     flex-direction: row;
 }
 
+img {
+    width: 50vh;
+}
+
 .Ingredient_card{
     background-color: burlywood;
     border: thick black solid;
