@@ -8,7 +8,6 @@ for(i = 0; i < cards.length; i++){
 
 function editToppings(event) {
     let current_card;
-    console.log(event)
     if(event.target.id === "Pepperoni" || event.target.parentNode.id === "Pepperoni"){
         toppings.pepperoni = !toppings.pepperoni;
     }
@@ -27,6 +26,18 @@ function editToppings(event) {
     if(event.target.id === "Sausage" || event.target.parentNode.id === "Sausage"){
         toppings.sausage = !toppings.sausage;
     }
-    console.log(toppings);
+    toppingsList = ""
+    for(i in toppings){
+        if(toppings[i]===true){
+            toppingsList += i + ", "
+        }
+    }
+    if(toppingsList === ""){
+        toppingsList = "None";
+    } else{
+    toppingsList = toppingsList.substr(0, toppingsList.length - 2);
+    }
+    document.getElementById("I-tracker").innerHTML = "Toppings: " + toppingsList;
+
 
 }
