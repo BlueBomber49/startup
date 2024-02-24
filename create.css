@@ -15,6 +15,24 @@ div.right_column{
     flex: 1;
 }
 
+div.Canvas{
+    position: relative;
+}
+
+#Crust{
+    width:400px;
+    height:400px;
+
+}
+
+img.Ingredient{
+    position: absolute;
+    width:fit-content;
+    height:fit-content;
+    right: 27.75%;
+
+}
+
 main{
     flex-direction: row;
 }
