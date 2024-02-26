@@ -58,3 +58,7 @@ img {
 svg{
     background-color: white;
 }
+
+.hide{
+    display:none;
+}
