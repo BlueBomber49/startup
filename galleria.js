@@ -1,9 +1,9 @@
-let dummy_toppings = {pepperoni: true, pineapple: false, canadian_bacon: false, peppers: false, jalapeno: false, sausage: false}
+
 
 class pizza{
-    constructor (description){
+    constructor (description, toppings){
         this.description = description;
-        this.allToppings = dummy_toppings;
+        this.allToppings = toppings;
     }
 
     getDescription(){
@@ -15,10 +15,21 @@ class pizza{
     }
 
 }
-let pizza1 = new pizza("Pizza 1");
-let pizza2 = new pizza("Pizza 2");
-let pizza3 = new pizza("Pizza 3");
-pizzaList = [pizza1, pizza2, pizza3];
+/*
+let pizza1 = new pizza("Pizza 1", dummy_toppings);
+let pizza2 = new pizza("Pizza 2", dummy_toppings);
+let pizza3 = new pizza("Pizza 3", dummy_toppings);
+pizzasFromOutside = [pizza1, pizza2, pizza3];
+
+localStorage.setItem("pizzas", JSON.stringify(pizzasFromOutside));
+*/
+let pizzaList = localStorage.getItem("pizzas");
+pizzaList = JSON.parse(pizzaList);
+
+for(i in pizzaList){
+    currPizza = pizzaList[i];
+    pizzaList[i] = new pizza(currPizza.description, currPizza.allToppings); 
+}
 
 function pizzaToCard (displayPizza){
     let html = "<div class='card'><div class='Canvas'><img class='Crust' src='Pizza canvas.png'/>";
@@ -47,7 +58,7 @@ function pizzaToCard (displayPizza){
     html += "</div><p>" + displayPizza.getDescription() + "</p></div>"
     
     return html;
-    
+
 }
 function populate(){
     let pizzaData = "";
