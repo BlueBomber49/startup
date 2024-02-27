@@ -72,3 +72,31 @@ function editToppings(event) {
 
 
 }
+
+class pizza{
+    constructor (description){
+        this.description = description;
+        this.allToppings = toppings;
+    }
+
+    getDescription(){
+        return this.description;
+    }
+
+    getToppings(){
+        return this.allToppings
+    }
+
+}
+
+function submitPizza(){
+    let input = document.getElementById('Description').value;
+    let newPizza = new pizza(input);
+    let gallery = [];
+    let allPizzas = localStorage.getItem("pizzas");
+    if(allPizzas){
+        gallery = JSON.parse(allPizzas);
+    }
+    gallery.push(newPizza);
+    localStorage.setItem("pizzas", JSON.stringify(gallery))
+}

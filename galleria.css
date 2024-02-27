@@ -12,3 +12,21 @@ main .card {
     border-radius: 1em;
     text-align: center;
 }
+
+div.Canvas{
+  position: relative;
+}
+
+.Crust{
+  width:300px;
+  height:300px;
+
+}
+
+img.Ingredient{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: 3.5%;
+
+}
