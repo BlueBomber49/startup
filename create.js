@@ -2,8 +2,18 @@ let toppings = {pepperoni: false, pineapple: false, canadian_bacon: false, peppe
 
 let cards = document.getElementsByClassName("Ingredient_card");
 
+let chatMessages = [];
+
 for(i = 0; i < cards.length; i++){
     cards[i].addEventListener("click", function(event) {editToppings(event)});
+}
+
+let guestCount = 1;
+
+function setup(){
+    let description = document.getElementById("Description");
+        description.value = localStorage.getItem("Username");
+        description.value += "'s Pizza";
 }
 
 function editToppings(event) {
@@ -59,6 +69,11 @@ function editToppings(event) {
     toppingsList = ""
     for(i in toppings){
         if(toppings[i]===true){
+            if(i==="canadian_bacon"){
+                i = "Canadian Bacon";
+            } else{
+                i = i[0].toUpperCase() + i.substr(1);
+            }
             toppingsList += i + ", ";
         }
     }
@@ -69,7 +84,15 @@ function editToppings(event) {
     }
     document.getElementById("I-tracker").innerHTML = "Toppings: " + toppingsList;
 
+}
 
+async function notify(){
+    let message = "Tony just made a new pizza!"
+    chatMessages.push(message);
+    document.getElementById("notifications").innerHTML = "<p>" + chatMessages[0] + "</p>"
+    await setTimeout(() => {
+        document.getElementById("notifications").innerHTML = "<p>" + "Waiting for news..." + "</p>"
+    }, 4000);
 
 }
 
@@ -100,3 +123,10 @@ function submitPizza(){
     gallery.push(newPizza);
     localStorage.setItem("pizzas", JSON.stringify(gallery))
 }
+
+setup();
+notify();
+
+setInterval(() => {
+    notify();
+}, 10000)
