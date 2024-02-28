@@ -2,7 +2,8 @@ if(!localStorage.getItem("guestCount")){
     localStorage.setItem("guestCount", 1);
 }
 
-localStorage.setItem("Username", "");
+localStorage.removeItem("Username");
+
 function login(){
     let username = document.getElementById("Username").value;
 
