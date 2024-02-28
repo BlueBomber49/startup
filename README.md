@@ -49,3 +49,10 @@ And these are rough sketches of how the website should look
 - Application elements - Used good contrast and whitespace, things aren't too crowded
 - Application text content - Consistent fonts
 - Application images - Using placeholder images for finished pizzas
+
+### JS deliverable
+Wooo, we're in business now!
+- Login:  My app autopopulates the pizza description text box with the user's name
+- Database:  My app tracks the pizzas you make in an array and displays them in a beautiful grid!
+- Websocket:  It flashes notifications at intervals representing when a user makes a pizza!
+- Logic:  IT WORKS!!!  It's intuitive and allows you to create pizzas with ease
