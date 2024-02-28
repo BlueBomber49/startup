@@ -16,3 +16,11 @@ main div{
 p{
     padding: 0.5em;
 }
+
+@media (max-width: 640px) {
+    div.home_img {
+      display: none;
+      flex: 0;
+    }
+
+  }
