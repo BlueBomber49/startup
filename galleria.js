@@ -15,14 +15,8 @@ class pizza{
     }
 
 }
-/*
-let pizza1 = new pizza("Pizza 1", dummy_toppings);
-let pizza2 = new pizza("Pizza 2", dummy_toppings);
-let pizza3 = new pizza("Pizza 3", dummy_toppings);
-pizzasFromOutside = [pizza1, pizza2, pizza3];
 
-localStorage.setItem("pizzas", JSON.stringify(pizzasFromOutside));
-*/
+
 let pizzaList = localStorage.getItem("pizzas");
 pizzaList = JSON.parse(pizzaList);
 
