@@ -7,7 +7,7 @@ localStorage.removeItem("Username");
 function login(){
     let username = document.getElementById("Username").value;
 
-    if(username !== ""){
+    if(username){
         localStorage.setItem("Username", username);
         console.log(username);
     }
