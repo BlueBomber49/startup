@@ -121,7 +121,8 @@ function submitPizza(){
         gallery = JSON.parse(allPizzas);
     }
     gallery.push(newPizza);
-    localStorage.setItem("pizzas", JSON.stringify(gallery))
+    localStorage.setItem("pizzas", JSON.stringify(gallery));
+    localStorage.setItem("Username", "");
 }
 
 setup();
