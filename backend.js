@@ -1,4 +1,5 @@
 const express = require('express');
+const res = require('express/lib/response');
 const app = express();
 
 app.use(express.static('Public'))
@@ -12,3 +13,19 @@ console.log(`Listening on port ${port}`)
 var pizzaRouter = express.Router();
 
 //app.command('url_path', (req, res) => {function})
+
+var storedPizzas =  []
+storedPizzas = JSON.stringify(storedPizzas)
+
+app.get('/pizzas', (_req, res) =>{
+    res.send(storedPizzas);
+})
+
+app.put('/submission/pizzaID', (req, res) => {
+    addPizza(req.body);
+    res.send(storedPizzas)
+})
+
+function addPizza(){
+
+}

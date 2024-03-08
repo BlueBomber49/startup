@@ -17,13 +17,6 @@ class pizza{
 }
 
 
-let pizzaList = localStorage.getItem("pizzas");
-pizzaList = JSON.parse(pizzaList);
-
-for(i in pizzaList){
-    currPizza = pizzaList[i];
-    pizzaList[i] = new pizza(currPizza.description, currPizza.allToppings); 
-}
 
 function pizzaToCard (displayPizza){
     let html = "<div class='card'><div class='Canvas'><img class='Crust' src='Assets/Pizza canvas.png'/>";
@@ -54,7 +47,27 @@ function pizzaToCard (displayPizza){
     return html;
 
 }
-function populate(){
+
+let pizzaList;
+async function populate(){
+
+    try{
+        pizzaList = await fetch('/pizzas')
+        pizzaList = await pizzaList.json()
+        if(pizzaList.length > 0){
+            pizzaList = JSON.parse(pizzaList);
+        }
+        
+    }
+    catch{
+        pizzaList = localStorage.getItem("pizzas")
+        pizzaList = JSON.parse(pizzaList);
+    }
+
+    for(i in pizzaList){
+        currPizza = pizzaList[i];
+        pizzaList[i] = new pizza(currPizza.description, currPizza.allToppings); 
+    }
     let pizzaData = "";
 
     for(i in pizzaList){
@@ -67,5 +80,6 @@ function populate(){
 
     document.getElementsByClassName("container")[0].innerHTML = pizzaData;
 }
+
 
 populate();
