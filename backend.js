@@ -21,11 +21,12 @@ app.get('/pizzas', (_req, res) =>{
     res.send(storedPizzas);
 })
 
-app.put('/submission/pizzaID', (req, res) => {
+app.post('/submission', (req, res) => {
     addPizza(req.body);
     res.send(storedPizzas)
 })
 
-function addPizza(){
+function addPizza(pizza){
+    storedPizzas.push(pizza)
 
 }

@@ -112,12 +112,26 @@ class pizza{
 
 }
 
-function submitPizza(){
+async function submitPizza(){
     let input = document.getElementById('Description').value;
     let newPizza = new pizza(input);
+    let allPizzas;
+
+    try{ //Add pizza to server
+    allPizzas = await fetch('/submission', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(newPizza),
+      });
+      allPizzas = await allPizzas.json()
+    }
+
+    catch{ //Backup plan
+        allPizzas = localStorage.getItem("pizzas");
+    }
+
     let gallery = [];
-    let allPizzas = localStorage.getItem("pizzas");
-    if(allPizzas){
+    if(allPizzas.length > 0){
         gallery = JSON.parse(allPizzas);
     }
     gallery.push(newPizza);
