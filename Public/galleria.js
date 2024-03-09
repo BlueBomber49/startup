@@ -21,7 +21,7 @@ class pizza{
 function pizzaToCard (displayPizza){
     let html = "<div class='card'><div class='Canvas'><img class='Crust' src='Assets/Pizza canvas.png'/>";
 
-    let toppings = displayPizza.getToppings()
+    let toppings = displayPizza.getToppings();
 
     if(toppings.canadian_bacon){
         html += "<img id='img_Canadian_Bacon' class='Ingredient' src='Assets/Canadian_Bacon_topping.png'/>"
@@ -51,22 +51,14 @@ function pizzaToCard (displayPizza){
 let pizzaList;
 async function populate(){
 
-    try{
-        pizzaList = await fetch('/pizzas')
-        pizzaList = await pizzaList.json()
-        if(pizzaList.length > 0){
-            pizzaList = JSON.parse(pizzaList);
-        }
+    pizzaList = await fetch('/pizzas')
+    pizzaList = await pizzaList.json()
+
         
-    }
-    catch{
-        pizzaList = localStorage.getItem("pizzas")
-        pizzaList = JSON.parse(pizzaList);
-    }
 
     for(i in pizzaList){
         currPizza = pizzaList[i];
-        pizzaList[i] = new pizza(currPizza.description, currPizza.allToppings); 
+        pizzaList[i] = new pizza(currPizza.description, currPizza.toppings); 
     }
     let pizzaData = "";
 

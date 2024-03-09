@@ -109,26 +109,27 @@ class pizza{
     getToppings(){
         return this.allToppings
     }
-
+    toJSON(){
+        return {
+            description: this.description,
+            toppings: this.allToppings
+        };
+    }
 }
 
 async function submitPizza(){
     let input = document.getElementById('Description').value;
     let newPizza = new pizza(input);
     let allPizzas;
-
-    try{ //Add pizza to server
+     //Add pizza to server
+    console.log(JSON.stringify(newPizza))
     allPizzas = await fetch('/submission', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newPizza),
       });
       allPizzas = await allPizzas.json()
-    }
-
-    catch{ //Backup plan
-        allPizzas = localStorage.getItem("pizzas");
-    }
+    
 
     let gallery = [];
     if(allPizzas.length > 0){

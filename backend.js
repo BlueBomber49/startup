@@ -3,6 +3,7 @@ const res = require('express/lib/response');
 const app = express();
 
 app.use(express.static('Public'))
+app.use(express.json())
 
 port = 4000;
 
@@ -22,11 +23,14 @@ app.get('/pizzas', (_req, res) =>{
 })
 
 app.post('/submission', (req, res) => {
+    console.log(req.body)
     addPizza(req.body);
     res.send(storedPizzas)
 })
 
 function addPizza(pizza){
+    storedPizzas = JSON.parse(storedPizzas)
     storedPizzas.push(pizza)
-
+    console.log(storedPizzas)
+    storedPizzas = JSON.stringify(storedPizzas)
 }
