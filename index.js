@@ -10,10 +10,6 @@ app.listen(port)
 
 console.log(`Listening on port ${port}`)
 
-var pizzaRouter = express.Router();
-
-//app.command('url_path', (req, res) => {function})
-
 var storedPizzas =  []
 storedPizzas = JSON.stringify(storedPizzas)
 
@@ -26,6 +22,12 @@ app.post('/submission', (req, res) => {
     addPizza(req.body);
     res.send(storedPizzas)
 })
+
+
+//Should serve up the default file
+app.use((_req, res) => {
+    res.sendFile('index.html', { root: 'public' });
+  });
 
 function addPizza(pizza){
     storedPizzas = JSON.parse(storedPizzas)
