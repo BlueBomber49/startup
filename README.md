@@ -56,3 +56,10 @@ Wooo, we're in business now!
 - Database:  My app tracks the pizzas you make in an array and displays them in a beautiful grid!
 - Websocket:  It flashes notifications at intervals representing when a user makes a pizza!
 - Logic:  IT WORKS!!!  It's intuitive and allows you to create pizzas with ease
+
+### Services deliverable
+- I have created a server using node.js and express!
+- Frontend is served up using the express static middleware
+- I use a fact of the day 3rd party service endpoint on each of my pages
+- My backend includes functions that will save the pizzas on the server
+- My frontend calls those functions to save the pizzas
