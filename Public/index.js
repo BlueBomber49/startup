@@ -22,18 +22,15 @@ function login(){
     
 }
 
-/*
-var limit = 1;
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/facts?limit=' + limit,
-    headers: { 'X-Api-Key': 'YOUR_API_KEY'},
-    contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
-*/
+function displayFact(){
+    
+    fetch('https://uselessfacts.jsph.pl/api/v2/facts/today?language=en')
+    .then((response) => response.json())
+    .then((data) => {
+        const container = document.querySelector('#Fact')
+        container.textContent = 'Fact of the Day: ' + data.text;
+        localStorage.setItem('factOfDay', data.text)
+    })
+}
+
+displayFact()
