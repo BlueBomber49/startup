@@ -146,3 +146,16 @@ notify();
 setInterval(() => {
     notify();
 }, 10000)
+
+function displayFact(){
+    
+    fetch('https://uselessfacts.jsph.pl/api/v2/facts/today?language=en')
+    .then((response) => response.json())
+    .then((data) => {
+        const container = document.querySelector('#Fact')
+        container.textContent = 'Fact of the Day: ' + data.text;
+        localStorage.setItem('factOfDay', data.text)
+    })
+}
+
+displayFact()
