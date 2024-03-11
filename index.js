@@ -1,11 +1,10 @@
 const express = require('express');
-const res = require('express/lib/response');
 const app = express();
 
 app.use(express.static('Public'))
 app.use(express.json())
 
-port = 4000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.listen(port)
 
