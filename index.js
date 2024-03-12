@@ -17,7 +17,6 @@ apiRouter.get('/pizzas', (_req, res) =>{
 })
 
 apiRouter.post('/submission', (req, res) => {
-    console.log(req.body)
     addPizza(req.body);
     res.send(storedPizzas)
 })
@@ -35,7 +34,9 @@ console.log(`Listening on port ${port}`)
 function addPizza(pizza){
     storedPizzas = JSON.parse(storedPizzas)
     storedPizzas.push(pizza)
-    console.log(storedPizzas)
+    if(storedPizzas.length > 12){
+        storedPizzas.shift();
+    }
     storedPizzas = JSON.stringify(storedPizzas)
 }
 
