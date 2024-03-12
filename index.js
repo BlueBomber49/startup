@@ -23,10 +23,7 @@ apiRouter.post('/submission', (req, res) => {
 })
 
 
-//Should serve up the default file
-app.use((_req, res) => {
-    res.sendFile('index.html', { root: 'public' });
-  });
+
 
 app.listen(port)
 
