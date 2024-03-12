@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static('Public'))
+app.use(express.static('public'))
 app.use(express.json())
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -22,7 +22,10 @@ apiRouter.post('/submission', (req, res) => {
     res.send(storedPizzas)
 })
 
-
+//Should serve up the default file
+app.use((_req, res) => {
+    res.sendFile('index.html', { root: 'public' });
+  });
 
 
 app.listen(port)
