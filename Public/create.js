@@ -123,7 +123,7 @@ async function submitPizza(){
     let allPizzas;
      //Add pizza to server
     console.log(JSON.stringify(newPizza))
-    allPizzas = await fetch('/submission', {
+    allPizzas = await fetch('/api/submission', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newPizza),

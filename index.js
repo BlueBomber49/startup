@@ -9,11 +9,14 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 var storedPizzas =  []
 storedPizzas = JSON.stringify(storedPizzas)
 
-app.get('/pizzas', (_req, res) =>{
+var apiRouter = express.Router();
+app.use(`/api`, apiRouter);
+
+apiRouter.get('/pizzas', (_req, res) =>{
     res.send(storedPizzas);
 })
 
-app.post('/submission', (req, res) => {
+apiRouter.post('/submission', (req, res) => {
     console.log(req.body)
     addPizza(req.body);
     res.send(storedPizzas)

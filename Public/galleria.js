@@ -51,7 +51,7 @@ function pizzaToCard (displayPizza){
 let pizzaList;
 async function populate(){
 
-    pizzaList = await fetch('/pizzas')
+    pizzaList = await fetch('/api/pizzas')
     pizzaList = await pizzaList.json()
 
         
