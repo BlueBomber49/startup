@@ -1,25 +1,33 @@
 const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+const DB = require('./database.js');
 
 app.use(express.static('public'))
 app.use(express.json())
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
-var storedPizzas =  []
-storedPizzas = JSON.stringify(storedPizzas)
 
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-apiRouter.get('/pizzas', (_req, res) =>{
-    res.send(storedPizzas);
+apiRouter.post('/register', async (_req, res) =>{
+    DB.addUser(_req.body().Username, _req.body().Password)
 })
 
-apiRouter.post('/submission', (req, res) => {
-    addPizza(req.body);
-    res.send(storedPizzas)
-})
+
+//Get pizzas
+apiRouter.get('/pizzas', async (_req, res) =>{
+    res.send(await DB.getPizzas());
+});
+
+
+//Add pizza
+apiRouter.post('/submission', async (req, res) => {
+    await DB.addNewPizza(req.body);
+});
 
 //Should serve up the default file
 app.use((_req, res) => {
@@ -30,13 +38,4 @@ app.use((_req, res) => {
 app.listen(port)
 
 console.log(`Listening on port ${port}`)
-
-function addPizza(pizza){
-    storedPizzas = JSON.parse(storedPizzas)
-    storedPizzas.push(pizza)
-    if(storedPizzas.length > 12){
-        storedPizzas.shift();
-    }
-    storedPizzas = JSON.stringify(storedPizzas)
-}
 
