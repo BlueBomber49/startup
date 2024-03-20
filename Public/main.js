@@ -1,25 +1,27 @@
-if(!localStorage.getItem("guestCount")){
-    localStorage.setItem("guestCount", 1);
-}
-
 localStorage.removeItem("Username");
 
 function login(){
+    //Turn this into authentication
     let username = document.getElementById("Username").value;
 
-    if(username){
-        localStorage.setItem("Username", username);
-        console.log(username);
+    if(!username){
+        username = "Guest"
     }
 
-    else{
-        let num = localStorage.getItem("guestCount"); 
-        username = "Guest " + num;
-        localStorage.setItem("Username", username);
-        num ++;
-        localStorage.setItem("guestCount", num);
-    }
     
+}
+
+async function registerUser(){
+    let username = document.getElementById("Username").value;
+    let password = document.getElementById("Password").value;
+    await fetch('/api/register', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({
+            "Username" : username,
+            "Password" : password
+        }),
+    })
 }
 
 function displayFact(){
