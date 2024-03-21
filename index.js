@@ -14,7 +14,7 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 apiRouter.post('/register', async (_req, res) =>{
-    DB.addUser(_req.body().Username, _req.body().Password)
+    DB.addUser(_req.body.Username, _req.body.Password)
 })
 
 
