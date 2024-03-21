@@ -1,14 +1,16 @@
 localStorage.removeItem("Username");
 
-function login(){
-    //Turn this into authentication
+async function login(){
     let username = document.getElementById("Username").value;
-
-    if(!username){
-        username = "Guest"
-    }
-
-    
+    let password = document.getElementById("Password").value;
+    await fetch('/api/login', {
+        method: 'GET',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({
+            "Username" : username,
+            "Password" : password
+        }),
+    })
 }
 
 async function registerUser(){

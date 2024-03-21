@@ -42,10 +42,21 @@ async function addUser(username, password){
   return user;
 }
 
+async function getUser(username, password){
+  const hashword = await bcrypt.hash(password, 10);
+  const existsUser = await userData.findOne({'Username' : username, 'Password' : hashword});
+  if(existsUser){
+    return existsUser
+  } else{
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+}
+
 
 
 module.exports = {
   addNewPizza,
   getPizzas,
   addUser,
+  getUser,
 };

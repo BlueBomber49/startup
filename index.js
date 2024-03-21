@@ -17,6 +17,10 @@ apiRouter.post('/register', async (_req, res) =>{
     DB.addUser(_req.body.Username, _req.body.Password)
 })
 
+apiRouter.get('/login', async (_req, res) =>{
+    DB.getUser(_req.body.Username, _req.body.Password)
+})
+
 
 //Get pizzas
 apiRouter.get('/pizzas', async (_req, res) =>{
