@@ -19,7 +19,7 @@
 <body>
     <header>
         <h1>Tony's Pizza Galleria</h1>
-        <nav class="mainmenu">
+        <nav id = "mainmenu" class="hidden">
             <menu>
                 <a href="index.html">
                     <button type="button" class="btn btn-primary">Home</button>
@@ -41,10 +41,14 @@
         </div>
         <div>
         <h3>Login</h3>
+        <div id="message_box"></div>
         <p>Username <input id="Username" /></p>
         <p>Password <input type="password" id = "Password"/></p>
-            <button type="button" input-type = "submit" class="btn btn-primary" onclick="login()">Login</button>
-            <button type="button" input-type = "submit" class="btn btn-primary" onclick="registerUser()">Register</button>
+            <button type="button" input-type = "submit" class="btn btn-primary login/register" onclick="login()">Login</button>
+            <button type="button" input-type = "submit" class="btn btn-primary login/register" onclick="registerUser()">Register</button>
+            <button type="button" input-type = "submit" class="btn btn-primary logout/create hidden" onclick="">Make a pizza!</button>
+            <button type="button" input-type = "submit" class="btn btn-primary logout/create hidden" onclick="">Logout</button>
+        </div>
         </div>
         
 
