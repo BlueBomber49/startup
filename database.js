@@ -51,6 +51,10 @@ async function getUser(username){
   }
 }
 
+function getUserByToken(token) {
+  return userData.findOne({ token: token });
+}
+
 
 
 
@@ -60,4 +64,5 @@ module.exports = {
   getPizzas,
   addUser,
   getUser,
+  getUserByToken
 };

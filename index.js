@@ -20,6 +20,7 @@ app.use(`/api`, apiRouter);
 //Working
 apiRouter.post('/register', async (_req, res) =>{
     DB.addUser(_req.body.Username, _req.body.Password)
+    return;
 })
 
 //Working
@@ -35,6 +36,11 @@ apiRouter.post('/login', async (_req, res) =>{
   res.status(401).send({ msg: 'Unauthorized' });
 })
 
+apiRouter.delete('/logout', (_req, res) => {
+    res.clearCookie(authCookieName);
+    res.status(204).end();
+  });
+  
 
 
 //Haven't set up cookies yet
@@ -52,6 +58,8 @@ secureApiRouter.use(async (req, res, next) => {
     res.status(401).send({ msg: 'Unauthorized' });
   }
 });
+
+
 
 //Get pizzas
 secureApiRouter.get('/pizzas', async (_req, res) =>{
