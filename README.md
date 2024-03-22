@@ -63,3 +63,10 @@ Wooo, we're in business now!
 - I use a fact of the day 3rd party service endpoint on each of my pages
 - My backend includes functions that will save the pizzas on the server
 - My frontend calls those functions to save the pizzas
+
+### Database/Login
+- New register button on the front page
+- Login button works for existing users
+- MongoDB has the data!
+- MongoDB has the credentials!
+- Ya can't makea the pizza unless youa sign-ina
