@@ -73,7 +73,9 @@ async function registerUser(){
 }
 
 function changeWindow(){
+    localStorage.setItem('Username', document.getElementById("Username").value)
     window.location.href = "/create.html"
+
 }
 
 function displayFact(){

@@ -40,35 +40,17 @@ apiRouter.delete('/logout', (_req, res) => {
     res.clearCookie(authCookieName);
     res.status(204).end();
   });
-  
-
-
-//Haven't set up cookies yet
-var secureApiRouter = express.Router();
-apiRouter.use(secureApiRouter);
-
-
-//getUserByToken needed
-secureApiRouter.use(async (req, res, next) => {
-  authToken = req.cookies[authCookieName];
-  const user = await DB.getUserByToken(authToken);
-  if (user) {
-    next();
-  } else {
-    res.status(401).send({ msg: 'Unauthorized' });
-  }
-});
 
 
 
 //Get pizzas
-secureApiRouter.get('/pizzas', async (_req, res) =>{
+apiRouter.get('/pizzas', async (_req, res) =>{
     res.send(await DB.getPizzas());
 });
 
 //Worked before adding secureApiRouter
 //Add pizza
-secureApiRouter.post('/submission', async (req, res) => {
+apiRouter.post('/submission', async (req, res) => {
     await DB.addNewPizza(req.body);
 });
 
