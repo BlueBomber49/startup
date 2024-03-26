@@ -89,10 +89,6 @@ function editToppings(event) {
 async function notify(){
     let message = "Tony just made a new pizza!"
     chatMessages.push(message);
-    document.getElementById("notifications").innerHTML = "<p>" + chatMessages[0] + "</p>"
-    await setTimeout(() => {
-        document.getElementById("notifications").innerHTML = "<p>" + "Waiting for news..." + "</p>"
-    }, 4000);
 
 }
 
