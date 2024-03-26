@@ -87,9 +87,9 @@ function editToppings(event) {
 }
 
 async function notify(){
-    let message = "Tony just made a new pizza!"
-    chatMessages.push(message);
-
+    let message = "Tony just made a new pizza!  "
+    let newsBox = document.getElementById('notifications')
+    newsBox.innerText = message + newsBox.innerText
 }
 
 class pizza{
