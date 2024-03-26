@@ -3,7 +3,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const DB = require('./database.js');
-const { peerProxy } = require('./peerProxy.js');
+const { peerProxy } = require('./peerProxy.js')
 
 app.use(express.static('public'))
 app.use(express.json())
@@ -71,8 +71,8 @@ app.use((_req, res) => {
   }  
 
 
-app.listen(port)
-
-console.log(`Listening on port ${port}`)
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 
 peerProxy(httpService);
