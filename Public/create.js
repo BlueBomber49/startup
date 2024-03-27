@@ -8,7 +8,8 @@ for(i = 0; i < cards.length; i++){
     cards[i].addEventListener("click", function(event) {editToppings(event)});
 }
 
-let guestCount = 1;
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
 function setup(){
     let description = document.getElementById("Description");
@@ -86,11 +87,23 @@ function editToppings(event) {
 
 }
 
-async function notify(){
-    let message = "Tony just made a new pizza!"
+async function notify(message){
     let newsBox = document.getElementById('notifications')
     newsBox.innerHTML = "<p>" + message + "</p>" + newsBox.innerHTML
 }
+
+function broadcastNewPizza(user) {
+    let message = user + " just made a new pizza!"
+    socket.send(message);
+    notify(message)
+}
+
+function broadcastArrival(user){
+    let message = "Everybody say hi to " + user + "!"
+    socket.send(message)
+    notify(message)
+}
+
 
 class pizza{
     constructor (description){
