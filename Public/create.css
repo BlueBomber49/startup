@@ -9,6 +9,8 @@ div.left_column{
 
 div.center_column{
     flex: 5;
+    align-items: center;
+    justify-content: center;
 }
 
 div.right_column{
@@ -34,8 +36,9 @@ img.Ingredient{
 }
 
 div#notifications{
-    height:100px;
-    display:flex;
+    height:13vh;
+    display:block;
+    align-items: center;
     border:2px solid black;
     fill:antiquewhite;
     overflow:auto;

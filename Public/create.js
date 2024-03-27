@@ -87,9 +87,9 @@ function editToppings(event) {
 }
 
 async function notify(){
-    let message = "Tony just made a new pizza!  "
+    let message = "Tony just made a new pizza!"
     let newsBox = document.getElementById('notifications')
-    newsBox.innerText = message + newsBox.innerText
+    newsBox.innerHTML = "<p>" + message + "</p>" + newsBox.innerHTML
 }
 
 class pizza{
@@ -141,7 +141,7 @@ notify();
 
 setInterval(() => {
     notify();
-}, 10000)
+}, 2000)
 
 function displayFact(){
     
