@@ -8,8 +8,7 @@ for(i = 0; i < cards.length; i++){
     cards[i].addEventListener("click", function(event) {editToppings(event)});
 }
 
-const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
 
 function setup(){
     let description = document.getElementById("Description");
@@ -87,9 +86,18 @@ function editToppings(event) {
 
 }
 
+
+//Websocket functionality
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
 async function notify(message){
     let newsBox = document.getElementById('notifications')
     newsBox.innerHTML = "<p>" + message + "</p>" + newsBox.innerHTML
+}
+
+socket.onmessage = () => {
+    notify(message)
 }
 
 function broadcastNewPizza(user) {
@@ -103,6 +111,7 @@ function broadcastArrival(user){
     socket.send(message)
     notify(message)
 }
+
 
 
 class pizza{
@@ -127,6 +136,8 @@ class pizza{
 }
 
 async function submitPizza(){
+    let user = localStorage.getItem('Username')
+    broadcastNewPizza("test")
     let input = document.getElementById('Description').value;
     let newPizza = new pizza(input);
     let allPizzas;
@@ -150,11 +161,6 @@ async function submitPizza(){
 }
 
 setup();
-notify();
-
-setInterval(() => {
-    notify();
-}, 2000)
 
 function displayFact(){
     
