@@ -96,20 +96,29 @@ async function notify(message){
     newsBox.innerHTML = "<p>" + message + "</p>" + newsBox.innerHTML
 }
 
-socket.onmessage = () => {
-    notify(message)
+socket.onmessage = async (message) =>{
+    message = JSON.parse(await message.data.text())
+    let outmessage;
+    if(message.type === "NewUser"){
+        outmessage = "Everybody say hi to " + message.user + "!"
+    } else if(message.type === "NewPizza"){
+        outmessage = message.user + " just made a new pizza!"
+    }
+    notify(outmessage);
 }
 
-function broadcastNewPizza(user) {
-    let message = user + " just made a new pizza!"
+function broadcastNewPizza(currentUser) {
+    let message = JSON.stringify({type: "NewPizza", user: currentUser})
+    let msg = currentUser + " just made a new pizza!"
     socket.send(message);
-    notify(message)
+    notify(msg)
 }
 
-function broadcastArrival(user){
-    let message = "Everybody say hi to " + user + "!"
+socket.onopen = () => {
+    let message = JSON.stringify({type: "NewUser", user: localStorage.getItem('Username')})
+    let msg = "Everybody say hi to " + localStorage.getItem('Username') + "!"
     socket.send(message)
-    notify(message)
+    notify(msg)
 }
 
 
@@ -137,12 +146,12 @@ class pizza{
 
 async function submitPizza(){
     let user = localStorage.getItem('Username')
-    broadcastNewPizza("test")
+    broadcastNewPizza(user)
     let input = document.getElementById('Description').value;
     let newPizza = new pizza(input);
     let allPizzas;
      //Add pizza to server
-    console.log(JSON.stringify(newPizza))
+
     allPizzas = await fetch('/api/submission', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
