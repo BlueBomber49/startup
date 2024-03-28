@@ -18,8 +18,13 @@ const pizzaData = db.collection('Pizzas');
 });
 
 
-function addNewPizza(pizza) {
+async function addNewPizza(pizza) {
   pizzaData.insertOne(pizza);
+  pizzaArray = await pizzaData.find().toArray()
+  while(pizzaArray.length > 14){
+    pizzaData.findOneAndDelete({});
+    pizzaArray = await pizzaData.find().toArray()
+  }
 }
 
 function getPizzas(){
