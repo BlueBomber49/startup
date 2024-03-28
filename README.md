@@ -69,4 +69,11 @@ Wooo, we're in business now!
 - Login button works for existing users
 - MongoDB has the data!
 - MongoDB has the credentials!
+
+### Websocket
+- My backend listens for websocket connections
+- My frontend makes websocket connections
+- Data is sent
+- Data is displayed
+- Let's go
 - Ya can't makea the pizza unless youa sign-ina
