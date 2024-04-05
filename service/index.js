@@ -3,7 +3,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const DB = require('./database.js');
-const { peerProxy } = require('./peerproxy.js')
+const { peerProxy } = require('./peerProxy.js')
 app.use(express.static('public'))
 app.use(express.json())
 
