@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function galleria() {
+export function Galleria() {
   return (
     <main className='container-fluid bg-secondary text-center'>
       <div>Galleria displayed here</div>
