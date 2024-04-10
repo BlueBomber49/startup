@@ -1,0 +1,75 @@
+div{
+    padding: 1em;
+    text-align: center;
+}
+
+div.left_column{
+    flex:1;
+}
+
+div.center_column{
+    flex: 5;
+    align-items: center;
+    justify-content: center;
+}
+
+div.right_column{
+    flex: 1;
+}
+
+div.Canvas{
+    position: relative;
+}
+
+#Crust{
+    width:400px;
+    height:400px;
+
+}
+
+img.Ingredient{
+    position: absolute;
+    width:fit-content;
+    height:fit-content;
+    right: 27.75%;
+
+}
+
+div#notifications{
+    height:13vh;
+    display:block;
+    align-items: center;
+    border:2px solid black;
+    fill:antiquewhite;
+    overflow:auto;
+}
+
+main{
+    flex-direction: row;
+}
+
+img {
+    width: 50vh;
+}
+
+.Ingredient_card{
+    background-color: burlywood;
+    border: thick black solid;
+    border-radius: 25px;
+    margin-top: 2.75em;
+    margin-bottom: 2.75em;
+}
+
+.Ingredient_card img{
+    object-fit: scale-down;
+    width: 100px;
+    height: 70px;
+}
+
+svg{
+    background-color: white;
+}
+
+.hide{
+    display:none;
+}
