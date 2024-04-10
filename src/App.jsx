@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter,NavLink,Routes,Navigate,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
-
+import {create} from './Create/Create'
+import {galleria} from './Galleria/Galleria'
+import {main} from './Main/Main'
 
 export default function App() {
   return <div><header>
