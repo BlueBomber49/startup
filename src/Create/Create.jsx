@@ -28,12 +28,16 @@ export function Create() {
             setBacon(!canadianBaconState);
         } else if(type == 'sausage'){
             setSausage(!sausageState);
+        } else if(type == 'jalapeno'){
+            setJalapeno(!jalapenoState);
         }
     }
 
     const navigate = useNavigate();
 
     function submitPizza(){
+        description = 
+        pizzaToSubmit = new pizza(description, toppings)
         navigate('/galleria')
     }
 
