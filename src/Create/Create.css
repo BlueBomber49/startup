@@ -24,14 +24,13 @@ div.Canvas{
 #Crust{
     width:400px;
     height:400px;
-
 }
 
-img.Ingredient{
+img.hotIngredient{
     position: absolute;
     width:fit-content;
     height:fit-content;
-    right: 27.75%;
+    right: 26.5%;
 
 }
 
