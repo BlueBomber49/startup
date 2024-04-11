@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Main.css'
 
 export function Main({auth, changeAuth}) {
@@ -8,6 +9,7 @@ export function Main({auth, changeAuth}) {
         changeAuth(true);
         } else changeAuth(false);
 }
+    const navigate = useNavigate();
 
   return (
     <main>
@@ -26,7 +28,7 @@ export function Main({auth, changeAuth}) {
         <button type="button" input-type = "submit" className="btn btn-primary login/register" onClick={() => authenticate()}>Register</button>
     )}
     {auth === true &&(
-        <button type="button" input-type = "submit" className="btn btn-primary logout/create" onClick={() => authenticate()}>Make a pizza!</button>
+            <button type="button" input-type = "submit" className="btn btn-primary logout/create" onClick={() => navigate("/create")}>Make a pizza!</button>
     )}
     {auth === true &&(
         <button type="button" input-type = "submit" className="btn btn-primary logout/create" onClick={() => authenticate()}>Logout</button>
