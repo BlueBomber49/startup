@@ -7,28 +7,39 @@ import {Main} from './Main/Main'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 
 export default function App() {
+  const [authenticated, setAuthentication] = React.useState(false)
+
+  
   return <BrowserRouter>
   <div><header>
   <h1>Tony's Pizza Galleria</h1>
   <nav id = "mainmenu">
       <menu>
-          <NavLink to="main">
+        {authenticated === true &&(
+          <NavLink to="/">
               <button type="button" className="btn btn-primary">Home</button>
           </NavLink>
+        )} 
+        {authenticated === true &&(
           <NavLink to="create">
-          <button type="button" className="btn btn-primary" onclick="changeWindow()">Create</button>
+          <button type="button" className="btn btn-primary">Create</button>
           </NavLink>
+        )}
+        {authenticated === true &&(
           <NavLink to="galleria">
               <button type="button" className="btn btn-primary">Galleria</button>
           </NavLink>
+        )}
       </menu>
   </nav>
   <hr />
 </header>
 
 <Routes>
-  <Route path='/' element={<Main/>} exact />
-  <Route path='/main' element={<Main/>}/>
+  <Route path='/' element={<Main
+                            auth = {authenticated}
+                            changeAuth = {setAuthentication}
+                            />} exact />
   <Route path='/create' element={<Create/>}/>
   <Route path='/galleria' element={<Galleria/>}/>
   <Route path='*' element={<NotFound />} />

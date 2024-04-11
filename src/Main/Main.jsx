@@ -1,7 +1,14 @@
 import React from 'react';
 import './Main.css'
 
-export function Main() {
+export function Main({auth, changeAuth}) {
+
+    function authenticate(){
+        if(!auth){
+        changeAuth(true);
+        } else changeAuth(false);
+}
+
   return (
     <main>
     <div className="home_img">
@@ -12,11 +19,19 @@ export function Main() {
     <div id="message_box"></div>
     <p>Username <input id="Username" /></p>
     <p>Password <input type="password" id = "Password"/></p>
-        <button type="button" input-type = "submit" className="btn btn-primary login/register" onclick="login()">Login</button>
-        <button type="button" input-type = "submit" className="btn btn-primary login/register" onclick="registerUser()">Register</button>
-        <button type="button" input-type = "submit" className="btn btn-primary logout/create hidden" onclick="changeWindow()">Make a pizza!</button>
-        <button type="button" input-type = "submit" className="btn btn-primary logout/create hidden" onclick="logout()">Logout</button>
-    </div>
+    {auth === false &&(
+        <button type="button" input-type = "submit" className="btn btn-primary login/register" onClick={() => authenticate()}>Login</button>
+    )}
+    {auth === false &&(
+        <button type="button" input-type = "submit" className="btn btn-primary login/register" onClick={() => authenticate()}>Register</button>
+    )}
+    {auth === true &&(
+        <button type="button" input-type = "submit" className="btn btn-primary logout/create" onClick={() => authenticate()}>Make a pizza!</button>
+    )}
+    {auth === true &&(
+        <button type="button" input-type = "submit" className="btn btn-primary logout/create" onClick={() => authenticate()}>Logout</button>
+    )}
+        </div>
 </main>
   );
 }
