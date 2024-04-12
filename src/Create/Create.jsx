@@ -11,6 +11,7 @@ export function Create() {
     const [peppersState, setPeppers] = React.useState(false);
     const [jalapenoState, setJalapeno] = React.useState(false);
     const [sausageState, setSausage] = React.useState(false);
+    const [descriptionText, setDescription] = React.useState('')
 
     
     let toppings = {pepperoni: pepperoniState, pineapple: pineappleState, canadian_bacon: canadianBaconState,
@@ -36,8 +37,8 @@ export function Create() {
     const navigate = useNavigate();
 
     function submitPizza(){
-        description = 
-        pizzaToSubmit = new pizza(description, toppings)
+        let pizzaToSubmit = new pizza(descriptionText, toppings)
+        console.log(pizzaToSubmit)
         navigate('/galleria')
     }
 
@@ -91,7 +92,7 @@ export function Create() {
             </div>
 
             <p>Pizza description:</p>
-            <input id="Description"></input>
+            <input id="Description" placeholder='Your description here' onChange={(e) => setDescription(e.target.value)}></input>
             <div>
                 <button type="button" className="btn btn-primary" onClick={() => submitPizza()}>Display</button>
             </div>

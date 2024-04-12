@@ -1,5 +1,6 @@
 export class pizza{
-    constructor (description){
+
+    constructor (description, toppings){
         this.description = description;
         this.allToppings = toppings;
     }
