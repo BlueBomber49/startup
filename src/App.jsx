@@ -8,7 +8,17 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 
 export default function App() {
   const [authenticated, setAuthentication] = React.useState(false)
-
+  
+  let [factOfDay, setFact] = React.useState('.')
+  React.useEffect(() => {
+    fetch('https://uselessfacts.jsph.pl/api/v2/facts/today?language=en')
+    .then((response) => response.json())
+    .then((data) => {
+        factOfDay = data.text;
+        setFact(data.text);
+        localStorage.setItem('factOfDay', data.text)
+    })
+}, [])
   
   return <BrowserRouter>
   <div><header>
@@ -46,7 +56,7 @@ export default function App() {
 </Routes>
 
 <footer>
-        <p id="Fact">.</p>
+        <p id="Fact"> {factOfDay} </p>
 
         <p id="source">
         <a href="https://github.com/BlueBomber49/startup">Github repo</a>
