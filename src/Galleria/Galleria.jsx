@@ -1,13 +1,11 @@
 import React from 'react';
 import './Galleria.css'
+import { PizzaCardList } from './PizzaCards';
 
 export function Galleria() {
   return (
     <main>
-        <div class="container">
-
-        Pizza cards go here
-        </div>
+        <PizzaCardList/>
     </main>
   );
 }
