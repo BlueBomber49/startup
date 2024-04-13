@@ -18,7 +18,8 @@ class pizza{
 }
 export function PizzaCardList(){
     function pizzaToCard (displayPizza){
-        let html = "<div class='Card'><div class='canvas'><img class='Crust' src='Assets/Pizza canvas.png'/>";
+        console.log(displayPizza)
+        let html = "<div class='Card'><div class='canvas'><img class='Crust' src='Assets/Pizza_canvas.png'/>";
         let toppings = displayPizza.getToppings();
         if(toppings.canadian_bacon){
             html += "<img id='img_Canadian_Bacon' class='Ingredient' src='Assets/Canadian_Bacon_topping.png'/>"

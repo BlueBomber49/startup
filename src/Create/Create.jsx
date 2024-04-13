@@ -2,8 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Create.css'
 import {pizza} from './Pizza.js'
+import {Markup} from 'interweave'
+import {Notifier} from './Notifier.jsx'
+import {broadcastNewPizza} from './Messages.js'
 
-export function Create() {
+export function Create(username) {
    
     const [pepperoniState, setPepperoni] = React.useState(false);
     const [pineappleState, setPineapple] = React.useState(false);
@@ -12,7 +15,6 @@ export function Create() {
     const [jalapenoState, setJalapeno] = React.useState(false);
     const [sausageState, setSausage] = React.useState(false);
     const [descriptionText, setDescription] = React.useState('')
-
     
     let toppings = {pepperoni: pepperoniState, pineapple: pineappleState, canadian_bacon: canadianBaconState,
         peppers: peppersState, jalapeno: jalapenoState, sausage: sausageState}
@@ -32,14 +34,22 @@ export function Create() {
         } else if(type == 'jalapeno'){
             setJalapeno(!jalapenoState);
         }
+        console.log(username)
     }
 
     const navigate = useNavigate();
 
-    function submitPizza(){
+    async function submitPizza(){
+        broadcastNewPizza()
         let pizzaToSubmit = new pizza(descriptionText, toppings)
         console.log(pizzaToSubmit)
-        navigate('/galleria')
+        await fetch('/api/submission', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(pizzaToSubmit),
+          })
+          .then(navigate('/galleria'))
+
     }
 
   return (
@@ -64,12 +74,10 @@ export function Create() {
             </p>
             <hr />
             Hot off the press: 
-            <div id = "notifications">
-
-            </div>
+            <Notifier/>
 
             <div className="Canvas">
-                <img id="Crust" src="Assets/Pizza canvas.png"/>
+                <img id="Crust" src="Assets/Pizza_canvas.png"/>
 
                 {canadianBaconState && (
                 <img id="img_Canadian_Bacon" className="hotIngredient" src="Assets/Canadian_Bacon_topping.png"/>

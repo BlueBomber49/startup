@@ -8,6 +8,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 
 export default function App() {
   const [authenticated, setAuthentication] = React.useState(false)
+  const [username, setUsername] = React.useState('')
   
   let [factOfDay, setFact] = React.useState('.')
   React.useEffect(() => {
@@ -49,8 +50,10 @@ export default function App() {
   <Route path='/' element={<Main
                             auth = {authenticated}
                             changeAuth = {setAuthentication}
+                            username = {username}
+                            setUsername = {setUsername}
                             />} exact />
-  <Route path='/create' element={<Create/>}/>
+  <Route path='/create' element={<Create username = {username}/>}/>
   <Route path='/galleria' element={<Galleria/>}/>
   <Route path='*' element={<NotFound />} />
 </Routes>

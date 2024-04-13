@@ -19,7 +19,8 @@ app.use(`/api`, apiRouter);
 
 //Working
 apiRouter.post('/register', async (_req, res) =>{
-    DB.addUser(_req.body.Username, _req.body.Password)
+    DB.addUser(_req.body.Username, _req.body.Password);
+    res.status(200).send({ id: user._id });
     return;
 })
 
@@ -29,7 +30,7 @@ apiRouter.post('/login', async (_req, res) =>{
   if (user) {
     if (await bcrypt.compare(_req.body.Password, user.Password)) {
       setAuthCookie(res, user.token);
-      res.send({ id: user._id });
+      res.status(200).send({ id: user._id });
       return;
     }
   }
