@@ -77,25 +77,25 @@ export function Create(username) {
             <Notifier/>
 
             <div className="Canvas">
-                <img id="Crust" src="assets/Pizza_canvas.png"/>
+                <img id="Crust" src="/Pizza_canvas.png"/>
 
                 {canadianBaconState && (
-                <img id="img_Canadian_Bacon" className="hotIngredient" src="assets/Canadian_Bacon_topping.png"/>
+                <img id="img_Canadian_Bacon" className="hotIngredient" src="/Canadian_Bacon_topping.png"/>
                 )}
                 {peppersState && (
-                <img id="img_Peppers" className="hotIngredient" src="assets/Peppers_topping.png"/>
+                <img id="img_Peppers" className="hotIngredient" src="/Peppers_topping.png"/>
                 )}
                 {jalapenoState && (
-                <img id="img_Jalapeno" className="hotIngredient" src="assets/Jalapeno_topping.png"/>
+                <img id="img_Jalapeno" className="hotIngredient" src="/Jalapeno_topping.png"/>
                 )}
                 {pineappleState && (
-                <img id="img_Pineapple" className="hotIngredient" src="assets/Pineapple_topping.png"/>
+                <img id="img_Pineapple" className="hotIngredient" src="/Pineapple_topping.png"/>
                 )}
                 {sausageState && (
-                <img id="img_Sausage" className="hotIngredient" src="assets/Sausage_topping.png"/>
+                <img id="img_Sausage" className="hotIngredient" src="/Sausage_topping.png"/>
                 )}
                 {pepperoniState && (
-                <img id="img_Pepperoni" className="hotIngredient" src="assets/Pepperoni_topping.png"/>
+                <img id="img_Pepperoni" className="hotIngredient" src="/Pepperoni_topping.png"/>
                 )}
             </div>
 
@@ -111,7 +111,7 @@ export function Create(username) {
                 <img src="https://rolandfoods.com/product_images/45798-jalapeo-pepper-nacho-sliced-raw-600.png" />
                 Jalapeno peppers</div>
             <div className ="Ingredient_card" id="Sausage" onClick={() => modifyIngredient('sausage')}>
-                <img src="https://scm-assets.constant.co/scm/ahold/9a888e72fca371869e751ab34491d024/4790c985-d46a-475d-9d83-c85f3b0449bc.jpg"/>
+                <img src="https://scm-.constant.co/scm/ahold/9a888e72fca371869e751ab34491d024/4790c985-d46a-475d-9d83-c85f3b0449bc.jpg"/>
                 Italian sausage
             </div>
             <div className ="Ingredient_card" id="Peppers" onClick={() => modifyIngredient('peppers')}>
