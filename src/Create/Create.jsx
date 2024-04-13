@@ -77,25 +77,25 @@ export function Create(username) {
             <Notifier/>
 
             <div className="Canvas">
-                <img id="Crust" src="Assets/Pizza_canvas.png"/>
+                <img id="Crust" src="assets/Pizza_canvas.png"/>
 
                 {canadianBaconState && (
-                <img id="img_Canadian_Bacon" className="hotIngredient" src="Assets/Canadian_Bacon_topping.png"/>
+                <img id="img_Canadian_Bacon" className="hotIngredient" src="assets/Canadian_Bacon_topping.png"/>
                 )}
                 {peppersState && (
-                <img id="img_Peppers" className="hotIngredient" src="Assets/Peppers_topping.png"/>
+                <img id="img_Peppers" className="hotIngredient" src="assets/Peppers_topping.png"/>
                 )}
                 {jalapenoState && (
-                <img id="img_Jalapeno" className="hotIngredient" src="Assets/Jalapeno_topping.png"/>
+                <img id="img_Jalapeno" className="hotIngredient" src="assets/Jalapeno_topping.png"/>
                 )}
                 {pineappleState && (
-                <img id="img_Pineapple" className="hotIngredient" src="Assets/Pineapple_topping.png"/>
+                <img id="img_Pineapple" className="hotIngredient" src="assets/Pineapple_topping.png"/>
                 )}
                 {sausageState && (
-                <img id="img_Sausage" className="hotIngredient" src="Assets/Sausage_topping.png"/>
+                <img id="img_Sausage" className="hotIngredient" src="assets/Sausage_topping.png"/>
                 )}
                 {pepperoniState && (
-                <img id="img_Pepperoni" className="hotIngredient" src="Assets/Pepperoni_topping.png"/>
+                <img id="img_Pepperoni" className="hotIngredient" src="assets/Pepperoni_topping.png"/>
                 )}
             </div>
 

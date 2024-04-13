@@ -19,25 +19,25 @@ class pizza{
 export function PizzaCardList(){
     function pizzaToCard (displayPizza){
         console.log(displayPizza)
-        let html = "<div class='Card'><div class='canvas'><img class='Crust' src='Assets/Pizza_canvas.png'/>";
+        let html = "<div class='Card'><div class='canvas'><img class='Crust' src='assets/Pizza_canvas.png'/>";
         let toppings = displayPizza.getToppings();
         if(toppings.canadian_bacon){
-            html += "<img id='img_Canadian_Bacon' class='Ingredient' src='Assets/Canadian_Bacon_topping.png'/>"
+            html += "<img id='img_Canadian_Bacon' class='Ingredient' src='assets/Canadian_Bacon_topping.png'/>"
         }
         if(toppings.peppers){
-            html += "<img id='img_Peppers' class='Ingredient' src='Assets/Peppers_topping.png'/>"
+            html += "<img id='img_Peppers' class='Ingredient' src='assets/Peppers_topping.png'/>"
         }
         if(toppings.jalapeno){
-            html += "<img id='img_Jalapeno' class='Ingredient' src='Assets/Jalapeno_topping.png'/>"
+            html += "<img id='img_Jalapeno' class='Ingredient' src='assets/Jalapeno_topping.png'/>"
         }
         if(toppings.pineapple){
-            html += "<img id='img_Pineapple' class='Ingredient' src='Assets/Pineapple_topping.png'/>"
+            html += "<img id='img_Pineapple' class='Ingredient' src='assets/Pineapple_topping.png'/>"
         }
         if(toppings.sausage){
-            html += "<img id='img_Sausage' class='Ingredient' src='Assets/Sausage_topping.png'/>"
+            html += "<img id='img_Sausage' class='Ingredient' src='assets/Sausage_topping.png'/>"
         }
         if(toppings.pepperoni){
-            html += "<img id='img_Pepperoni' class='Ingredient' src='Assets/Pepperoni_topping.png'/>"
+            html += "<img id='img_Pepperoni' class='Ingredient' src='assets/Pepperoni_topping.png'/>"
         }
 
         html += "</div><p>" + displayPizza.getDescription() + "</p></div>"
